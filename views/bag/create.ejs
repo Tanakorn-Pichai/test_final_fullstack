@@ -3,8 +3,10 @@
 <head>
   <link rel="stylesheet" href="/css/style.css" />
   <title>Create bag</title>
+
 </head>
 <body>
+<%- include('../partials/header') %> 
   <h1>Create bag</h1>
 
   <form method="post" action="/bag/create">
@@ -28,5 +30,6 @@
   </form>
 
   <a href="/bag">Back to List</a>
+  <%- include('../partials/footer') %> 
 </body>
 </html>

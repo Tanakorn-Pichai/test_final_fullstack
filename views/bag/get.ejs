@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="/css/style.css" />
     <title>bag</title>
   </head>
-
+<%- include('../partials/header') %> 
   <body>
+     <div class="actions">
     <table>
         <tr>
             <th>name</th>
@@ -33,10 +34,13 @@
         
 
     </table>
-    <a href="/bag/update/<%= bag.id%>">Edit</a>
+
+    </div>
+        <a href="/bag/update/<%= bag.id%>">Edit</a>
                    <form action="/bag/delete/<%= bag.id %>" method="POST" style="display:inline;"> <button
                                 type="submit">Delete</button>
                         </form>
     <a href="/bag">Back to List</a>
+    <%- include('../partials/footer') %> 
 </body>
 </html>

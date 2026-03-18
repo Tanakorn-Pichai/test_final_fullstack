@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 
 // import routes
 const bagRoutes = require('./routes/bagRoutes');
+const orderRoutes = require('./routes/orderRoutes');
 
 app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "ejs");
@@ -16,7 +17,7 @@ app.use(express.static(__dirname + "/public"));
 
 // ใช้ routes
 app.use('/', bagRoutes);
-
+app.use('/orders', orderRoutes);
 
 app.listen(5500, () => {
   console.log('Server started on port http://localhost:5500');

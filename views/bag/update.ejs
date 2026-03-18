@@ -4,9 +4,9 @@
   <link rel="stylesheet" href="/css/style.css" />
   <title>Update bag</title>
 </head>
-<body>
+<body><%- include('../partials/header') %>
   <h1>Update bag</h1>
-
+ <div class="actions">
   <form method="post" action="/bag/update/<%= bag.id %>">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" value="<%= bag.name %>">
@@ -26,9 +26,10 @@
 
     <input type="submit" value="Update">
   </form>
-
+  </div>
   <a href="/bag/<%= bag.id %>">View</a>
   <a href="/delete/<%= bag.id %>">Delete</a>
   <a href="/bag">Back to List</a>
+<%- include('../partials/footer') %> 
 </body>
 </html>

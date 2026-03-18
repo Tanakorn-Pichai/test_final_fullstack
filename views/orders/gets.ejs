@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Order</title>
+</head>
+
+<body> 
+    <%- include('../partials/header') %>
+
+    <h1>Orders</h1>
+
+    <div class="actions">
+   
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Order Date</th>
+            <th>Total Price</th>
+            <th>Order Details</th>
+            <th>Actions</th>
+        </tr>
+
+        <% orders.forEach(order => { %>
+            <tr>
+                <td><%= order.id %></td>
+                <td><%= order.order_date %></td>
+                <td><%= order.total_price %></td>
+
+                <!-- 🔥 OrderDetail -->
+                <td>
+                    <% if (order.order_details && order.order_details.length > 0) { %>
+                        <% order.order_details.forEach(detail => { %>
+                            <div>
+                                Qty: <%= detail.quantity %> <br>
+                                Price: <%= detail.price %>
+                                <hr>
+                            </div>
+                        <% }) %>
+                    <% } else { %>
+                        <span>No data</span>
+                    <% } %>
+                </td>
+
+                <td>
+                    <a href="/orders/<%= order.id %>">View</a>
+                    <a href="/orders/update/<%= order.id %>">Edit</a>
+
+                    <form action="/orders/delete/<%= order.id %>" method="POST" style="display:inline;">
+                        <button type="submit" class="btn delete"
+                            onclick="return confirm('Are you sure?')">
+                            Delete
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+
+    </table>
+    
+    </div>
+
+    <a href="/orders/create">Create New Order</a>
+    <a href="/">Back to Home</a>
+
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

@@ -16,7 +16,7 @@ exports.getHome = async (req, res) => {
 exports.getBags = async (req, res) => {
   try {
     const response = await axios.get(base_url + '/bag');
-    res.render("bag/getbags", { bag: response.data });
+    res.render("bag/gets", { bag: response.data });
   } catch (err) {
     console.error(err);
     res.status(500).send('Error');
@@ -27,7 +27,7 @@ exports.getBags = async (req, res) => {
 exports.getBagById = async (req, res) => {
   try {
     const response = await axios.get(base_url + '/bag/' + req.params.id);
-    res.render("bag/getbag", { bag: response.data });
+    res.render("bag/get", { bag: response.data });
   } catch (err) {
     console.error(err);
     res.status(500).send('Error');
