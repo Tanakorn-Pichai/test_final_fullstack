@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/css/style.css" />
+  <title>Update bag</title>
+</head>
+<body>
+  <h1>Update bag</h1>
+
+  <form method="post" action="/bag/update/<%= bag.id %>">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="<%= bag.name %>">
+    <br>
+
+    <label for="brand">Brand:</label>
+    <input type="text" id="brand" name="brand" value="<%= bag.brand %>">
+    <br>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" value="<%= bag.price %>">
+    <br>
+
+    <label for="stock">Stock:</label>
+    <input type="number" id="stock" name="stock" value="<%= bag.stock %>">
+    <br>
+
+    <input type="submit" value="Update">
+  </form>
+
+  <a href="/bag/<%= bag.id %>">View</a>
+  <a href="/delete/<%= bag.id %>">Delete</a>
+  <a href="/bag">Back to List</a>
+</body>
+</html>

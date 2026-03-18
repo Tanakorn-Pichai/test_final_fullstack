@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/css/style.css" />
+  <title>Create bag</title>
+</head>
+<body>
+  <h1>Create bag</h1>
+
+  <form method="post" action="/bag/create">
+    <label>Name:</label>
+    <input type="text" name="name" placeholder="Enter bag name" required>
+    <br>
+
+    <label>Brand:</label>
+    <input type="text" name="brand" placeholder="Enter brand" required>
+    <br>
+
+    <label>Price:</label>
+    <input type="number" name="price" placeholder="Enter price" required>
+    <br>
+
+    <label>Stock:</label>
+    <input type="number" name="stock" placeholder="Enter stock" required>
+    <br>
+
+    <button type="submit">Create</button>
+  </form>
+
+  <a href="/bag">Back to List</a>
+</body>
+</html>

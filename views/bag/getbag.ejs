@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>bag</title>
+  </head>
+
+  <body>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>brand</th>
+            <th>price</th>
+            <th>stock</th>
+        </tr>
+        <tr>
+            <td>
+                <%= bag.name%>
+            </td>
+            <td>
+                <%= bag.brand%>
+            </td>
+            <td>
+                <%= bag.price%>
+            </td>
+            <td>
+                <%= bag.stock%>
+            </td>
+
+        </tr>
+        
+
+    </table>
+    <a href="/bag/update/<%= bag.id%>">Edit</a>
+                   <form action="/bag/delete/<%= bag.id %>" method="POST" style="display:inline;"> <button
+                                type="submit">Delete</button>
+                        </form>
+    <a href="/bag">Back to List</a>
+</body>
+</html>

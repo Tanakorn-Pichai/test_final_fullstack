@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>bag</title>
 </head>
 
@@ -18,29 +18,35 @@
             <th>stock</th>
             <th>Actions</th>
         </tr>
-        <%for (var i=0; i <bag.length; i++ ){%>
+
+        <% bag.forEach(item=> { %>
             <tr>
                 <td>
-                    <%= bag[i].name%>
+                    <%= item.name %>
                 </td>
                 <td>
-                    <%= bag[i].brand%>
+                    <%= item.brand %>
                 </td>
                 <td>
-                    <%= bag[i].price%>
+                    <%= item.price %>
                 </td>
                 <td>
-                    <%= bag[i].stock%>
+                    <%= item.stock %>
                 </td>
+
                 <td>
-                    <a href="/book/<%= bag[i].id%>">View</a>
-                    <a href="/update/<%= bag[i].id%>">Edit</a>
-                    <a href="/delete/<%= bag[i].id%>">Delete</a>
+
+                        <a href="/bag/<%= item.id %>">View</a>
+                        <a href="/bag/update/<%= item.id %>">Edit</a>
+
+                        <form action="/bag/delete/<%= item.id %>" method="POST" style="display:inline;"> <button
+                                type="submit">Delete</button>
+                        </form>
                 </td>
             </tr>
-            <%}%>
+            <% }) %>
     </table>
-    <a href="/create">Create New Book</a>
+    <a href="/bag/create">Create New bag</a>
 </body>
 
 </html>
