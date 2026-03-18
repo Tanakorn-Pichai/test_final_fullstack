@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>bag</title>
+</head>
+
+<body>
+    <h1>bag</h1>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>brand</th>
+            <th>price</th>
+            <th>stock</th>
+            <th>Actions</th>
+        </tr>
+        <%for (var i=0; i <bag.length; i++ ){%>
+            <tr>
+                <td>
+                    <%= bag[i].name%>
+                </td>
+                <td>
+                    <%= bag[i].brand%>
+                </td>
+                <td>
+                    <%= bag[i].price%>
+                </td>
+                <td>
+                    <%= bag[i].stock%>
+                </td>
+                <td>
+                    <a href="/book/<%= bag[i].id%>">View</a>
+                    <a href="/update/<%= bag[i].id%>">Edit</a>
+                    <a href="/delete/<%= bag[i].id%>">Delete</a>
+                </td>
+            </tr>
+            <%}%>
+    </table>
+    <a href="/create">Create New Book</a>
+</body>
+
+</html>
